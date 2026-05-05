@@ -1,0 +1,13 @@
+name: Shreya First MFT Pipeline
+on: [push]
+jobs:
+  mft-job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Run Shreya MFT Commands
+        run: |
+          echo "Hello Shreya, ही तुझी पहिली MFT DevOps Pipeline आहे"
+          echo "आत्ता आपण chmod 777 करू"
+          echo "cd /tmp"
+          echo "chmod 777 test.txt"
+          echo "Pipeline Success"
