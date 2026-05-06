@@ -1,0 +1,26 @@
+name: Shreya MFT SSH Pipeline 
+on: workflow_dispatch
+jobs:
+  mft-ssh:
+    runs-on: ubuntu-latest
+    steps:
+      - name: MFT Server Connection 
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.MFT_HOST }}
+          username: ${{ secrets.MFT_USER }}
+          password: ${{ secrets.MFT_PASS }}
+          port: 22
+          script: |
+            echo "=== SHREYA MFT DEVOPS ENGINEER ==="
+            echo "Server Name: $(hostname)"
+            echo "Current User: $(whoami)"
+            echo "Server Time: $(date)"
+            echo "=================================="
+            echo "Target File Creating..."
+            cd /tmp
+            echo "Old pipeline" > shreya_first_pipeline.txt
+            echo "New Pipeline Start" >> shreya_first_pipeline.txt
+            chmod 777 shreya_first_pipeliline.txt
+            ls -l shreya_first_pipeline.txt
+            echo "=== SSH PIPELINE SUCCESS ==="
