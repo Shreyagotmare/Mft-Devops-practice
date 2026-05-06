@@ -1,0 +1,17 @@
+name: MFT Prod SSH
+on: 
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy to MFT
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.MFT_HOST }}
+          username: ${{ secrets.MFT_USER }}
+          password: ${{ secrets.MFT_PASS }}
+          script: |
+            echo "Server: $(hostname)"
+            echo "User: $(whoami)"
