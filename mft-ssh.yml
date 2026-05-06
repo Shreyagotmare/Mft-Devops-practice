@@ -1,4 +1,4 @@
-name: Shreya MFT SSH Pipeline 
+name: MFT SSH Pipeline 
 on: workflow_dispatch
 jobs:
   mft-ssh:
