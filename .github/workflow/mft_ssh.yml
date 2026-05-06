@@ -1,7 +1,5 @@
 name: MFT Prod SSH
-on: 
-  workflow_dispatch:
-
+on: workflow_dispatch
 jobs:
   deploy:
     runs-on: ubuntu-latest
